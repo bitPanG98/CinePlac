@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <title> * Cine Plac * </title>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <link rel="stylesheet" href="css/owl.carousel.css" >
+        <link rel="stylesheet" href="css/owl.theme.css" >
+        <link rel="stylesheet" href="css/owl.transitions.css" >
+        <link rel="stylesheet" href="css/style.css" >
+        <link rel="stylesheet" href="css/responsive.css" >
+        <link rel="stylesheet" href="css/animate.css">
+
+        <link rel="stylesheet" href="css/peliculas/peliculas.css" >
+        <link rel="stylesheet" href="css/peliculas/responsive.css" >
+
+        <link rel="stylesheet" type="text/css" href="css/color/green.css">
+
+        <style type="text/css">
+            .footer {
+                /* Altura total del footer en px con valor negativo */
+                margin-top: -50px;
+                /* Altura del footer en px. Se han restado los 5px del margen
+                   superior mas los 5px del margen inferior
+                */
+                height: 40px;
+                padding:10px 0px;
+                background: #000000;
+                text-align: center;
+                width:99%;
+                margin:10px 10px;
+                position:fixed;
+                left:0px;
+                bottom:0px;
+                color: #88b77b;
+
+            }
+        </style>
+    </head>
+
+    <body id="body">
+
+        <div id="preloader">
+            <img src="imagenes/preloader.gif" alt="Preloader">
+        </div>
+
+        <header id="navigation" class="navbar-fixed-top navbar">
+            <div class="container">
+                <nav class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+
+                        <li>
+                            <a href="#"> Inicio </a>
+                        </li>
+
+                        <li>
+                            <a href="vistas/form_listapeliculas.php" target="_blank"> Peliculas </a>
+                        </li>
+
+                        <li>
+                            <a href="vistas/form_login.php"> Inicio Sesion </a>
+                        </li>
+
+                        <li>
+                            <a href="vistas/form_sobre.php" target="_blank"> Acerca de </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section id="slider">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                </ol>
+
+                <div class="carousel-inner" role="listbox">
+
+                    <div class="item active" style="background-image: url(imagenes/Banner/banner1.jpg);">
+                        <div class="carousel-caption">
+                            <h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated"><span> </span> </h2>
+                            <h3 data-wow-duration="1000ms" class="wow slideInLeft animated">
+                                <span class="color">Cine Plac !!</span>
+                            </h3>
+                            <p data-wow-duration="1000ms" class="wow slideInRight animated"> Las mejores peliculas no se ven se vivien :) ..!!!!!</p>
+                        </div>
+                    </div>
+
+                    <div class="item" style="background-image: url(imagenes/Banner/banner2.jpg);">
+                        <div class="carousel-caption">
+                            <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated"><span> </span></h2>
+                            <h3 data-wow-duration="500ms" class="wow slideInLeft animated"><span class="color"> </span> </h3>
+                            <p data-wow-duration="500ms" class="wow slideInRight animated"></p>
+                        </div>
+                    </div>
+
+                    <div class="item" style="background-image: url(imagenes/Banner/banner3.jpg);">
+                        <div class="carousel-caption">
+                            <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated"> <span> </span></h2>
+                            <h3 data-wow-duration="500ms" class="wow slideInLeft animated"><span class="color">Vive,</span>la mejor experiencia viendo peliculas :) </h3>
+                            <p data-wow-duration="500ms" class="wow slideInRight animated">
+
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section id="team" class="team-member-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="team-section">
+                            <div class="our-team">
+
+                                <!--<?php
+/*//incluimos la conexion a BD
+require_once("../modelos/config.php");
+$conexion = conectarBD();
+
+//consulta para cargar los datos
+$sqlListarPeliculas = "SELECT p.cod_pelicula, p.nombre, gp.nombre_gp, p.duracion  "
+. "FROM peliculas p, generos_peliculas gp "
+. "WHERE p.cod_generopelicula=gp.cod_generopelicula AND gp.nombre_gp='Accion' ";
+
+$resultado = $conexion->query($sqlListarPeliculas);
+
+while ($col = $resultado->fetch_object()) {*/
+?>
+<div class="team-member">
+                                    <img src="imagenes/original/pelicula1.jpg" class="img-responsive" alt="">
+                                    <div class="team-details">
+                                        <h4>Viviendo Con ella </h4>
+                                        <p></p>
+                                        <ul>
+                                            <li><a href="#">Ver</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+<?php
+//}
+?>-->
+
+                                <div class="team-member">
+                                    <img src="imagenes/original/pelicula1.jpg" class="img-responsive" alt="">
+                                    <div class="team-details">
+                                        <h4>Viviendo Con ella </h4>
+                                        <p></p>
+                                        <ul>
+                                            <li><a href="#">verla</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="team-member">
+                                    <img src="imagenes/original/pelicula2.jpg" class="img-responsive" alt="">
+                                    <div class="team-details">
+                                        <h4>HackerMan</h4>
+                                    </div>
+                                </div>
+
+                                <div class="team-member">
+                                    <img src="imagenes/original/pelicula3.jpg" class="img-responsive" alt="">
+                                    <div class="team-details">
+                                        <h4>Naruto Shipudden</h4>
+                                    </div>
+                                </div>
+
+                                <div class="team-member">
+                                    <img src="imagenes/original/pelicula4.jpg" class="img-responsive" alt="">
+                                    <div class="team-details">
+                                        <h4>Transformers</h4>
+                                    </div>
+                                </div>
+
+                                <div class="team-member">
+                                    <img src="imagenes/original/pelicula5.jpg" class="img-responsive" alt="">
+                                    <div class="team-details">
+                                        <h4>Dragon Ball Z </h4>
+                                    </div>
+                                </div>
+
+                                <div class="team-member">
+                                    <img src="imagenes/original/pelicula6.jpg" class="img-responsive" alt="">
+                                    <div class="team-details">
+                                        <h4>Rapidos y Furiosos I</h4>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <table  style="margin: -425px 0"  width="100%">
+            <tr>
+                <td bgcolor="#610000">
+                    <img height="330px">
+                </td>
+            </tr>
+        </table>
+
+
+        <section>
+            <div class="footer">
+                <center>
+                    <p>Copyritgh (c) Cine Plac | Desarrollado por SoftPanG </p>
+            </div>
+        </section>
+
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/jquery.singlePageNav.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/count-to.js"></script>
+        <script src="js/jquery.appear.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+
+        <script>
+            var wow = new WOW({
+                boxClass: 'wow',
+                animateClass: 'animated',
+                offset: 120,
+                mobile: false,
+                live: true
+            }
+            );
+            wow.init();
+        </script>
+
+        <script src="js/custom.js"></script>
+        <script src="js/script.js"></script>
+
+    </body>
+</html>

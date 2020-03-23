@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> Peliculas </title>
+
+		 <link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css">
+
+        <link rel="stylesheet" type="text/css" href="../css/peliculas/peliculas.css">
+        <link rel="stylesheet" type="text/css" href="../css/peliculas/responsive.css">
+
+		<link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+		<link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+		<link rel="stylesheet" type="text/css" href="../plugins/OwlCarousel2-2.2.1/animate.css">
+
+
+</head>
+
+<style type="text/css" media="screen">
+
+	body{
+
+		font-family: times;
+		font-size: 25px;
+
+        /*Imagen de fondo*/
+        background-image: url(../img/Banner/fondo_peliculas.jpg);
+        background-attachment: fixed;
+        background-position: center;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-attachment:fixed;
+    }
+
+
+    h3{
+
+        font-size: 13px;
+        font-family: times;
+    }
+
+
+</style>
+
+<body>
+
+	<table border="0" align="center">
+
+		<tr>
+			<td align="center" height="50px" bgcolor="#20B2AA">
+				Peliculas en Estreno
+			</td>
+		</tr>
+		<tr>
+			<td >
+                    	<section id="team" class="team-member-section">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div id="team-section">
+
+                                                    <div class="our-team">
+<?php
+//incluimos la conexion a BD
+require_once ("../modelos/config.php");
+$conexion = conectarBD();
+
+//consulta para cargar los datos
+$sqlListarPeliculas = "SELECT p.cod_pelicula, p.nombre, gp.nombre_gp, p.duracion , p.imagen, p.url_video "
+."FROM peliculas p, generos_peliculas gp "
+."WHERE p.cod_generopelicula=gp.cod_generopelicula AND gp.nombre_gp='ESTRENOS' AND p.estado=1 ";
+
+$resultado = $conexion->query($sqlListarPeliculas);
+
+while ($col = $resultado->fetch_object()) {
+	?>
+	<div class="team-member">
+	<?php
+	echo "<img  src='data:imagen/jpeg;base64,".base64_encode($col->imagen)."' />";
+
+	?>
+	                                                                <div class="team-details">
+	                                                                    <h4>   <?php echo $col->nombre;?> </h4>
+	                                                                    <h3>Duracion : <?php echo $col->duracion;?> </h3>
+	                                                                    <ul>
+	                                                                        <li><a href="<?php echo $col->url_video;?>" target="_blank"> <i >Ver</i> </a> </li>
+	                                                                        <li><a href="#"><i >Reservar</i></a></li>
+	                                                                    </ul>
+	                                                                </div>
+	                                                            </div>
+
+	<?php
+}
+?>
+</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+			</td>
+		</tr>
+
+		<tr>
+			<td align="center" height="50px" bgcolor="#40E0D0">
+				Peliculas De Accion
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+					 <section id="team" class="team-member-section">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div id="team-section">
+
+                                                    <div class="our-team">
+
+<?php
+//incluimos la conexion a BD
+require_once ("../modelos/config.php");
+$conexion = conectarBD();
+
+//consulta para cargar los datos
+$sqlListarPeliculas = "SELECT p.cod_pelicula, p.nombre, gp.nombre_gp, p.duracion , p.imagen, p.url_video "
+."FROM peliculas p, generos_peliculas gp "
+."WHERE p.cod_generopelicula=gp.cod_generopelicula AND gp.nombre_gp='ACCION' AND p.estado=1";
+
+$resultado = $conexion->query($sqlListarPeliculas);
+
+while ($col = $resultado->fetch_object()) {
+	?>
+	<div class="team-member">
+	<?php
+	echo "<img  src='data:imagen/jpeg;base64,".base64_encode($col->imagen)."' />";
+
+	?>
+	                                                                                    <div class="team-details">
+	                                                                                        <h4>   <?php echo $col->nombre;?> </h4>
+	                                                                                        <h3>Duracion : <?php echo $col->duracion;?> </h3>
+	                                                                                        <ul>
+	                                                                                            <li><a href="<?php echo $col->url_video;?>" target="_blank"><i >Ver</i></a></li>
+	                                                                                            <li><a href="#"><i >Reservar</i></a></li>
+	                                                                                        </ul>
+	                                                                                    </div>
+	                                                                                </div>
+
+	<?php
+}
+?>
+</div>
+
+                                                 </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </section>
+			</td>
+		</tr>
+
+		<tr>
+			<td align="center" height="50px" bgcolor="#40E0D0">
+				Peliculas De Dibujos Animados
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+					 <section id="team" class="team-member-section">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div id="team-section">
+
+                                                    <div class="our-team">
+<?php
+//incluimos la conexion a BD
+require_once ("../modelos/config.php");
+$conexion = conectarBD();
+
+//consulta para cargar los datos
+$sqlListarPeliculas = "SELECT p.cod_pelicula, p.nombre, gp.nombre_gp, p.duracion , p.imagen, p.url_video "
+."FROM peliculas p, generos_peliculas gp "
+."WHERE p.cod_generopelicula=gp.cod_generopelicula AND gp.nombre_gp='INFANTILES' AND p.estado=1";
+
+$resultado = $conexion->query($sqlListarPeliculas);
+
+while ($col = $resultado->fetch_object()) {
+	?>
+	<div class="team-member">
+	<?php
+	echo "<img  src='data:imagen/jpeg;base64,".base64_encode($col->imagen)."' />";
+
+	?>
+	                                                                                    <div class="team-details">
+	                                                                                        <h4>   <?php echo $col->nombre;?> </h4>
+	                                                                                        <h3>Duracion : <?php echo $col->duracion;?> </h3>
+	                                                                                        <ul>
+	                                                                                            <li><a href="<?php echo $col->url_video;?>" target="_blank"><i >Ver</i></a></li>
+	                                                                                            <li><a href="#"><i >Reservar</i></a></li>
+	                                                                                        </ul>
+	                                                                                    </div>
+	                                                                                </div>
+
+	<?php
+}
+?>
+</div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+			</td>
+		</tr>
+
+        <!--333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333-->
+        <tr>
+            <td align="center" height="50px" bgcolor="#40E0D0">
+                Todas las Peliculas
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                     <section id="team" class="team-member-section">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div id="team-section">
+
+                                                    <div class="our-team">
+<?php
+//incluimos la conexion a BD
+require_once ("../modelos/config.php");
+$conexion = conectarBD();
+
+//consulta para cargar los datos
+$sqlListarPeliculas = "SELECT p.cod_pelicula, p.nombre, gp.nombre_gp, p.duracion , p.imagen, p.url_video "
+."FROM peliculas p, generos_peliculas gp "
+."WHERE p.cod_generopelicula=gp.cod_generopelicula AND p.estado=1";
+
+$resultado = $conexion->query($sqlListarPeliculas);
+
+while ($col = $resultado->fetch_object()) {
+	?>
+	<div class="team-member">
+	<?php
+	echo "<img  src='data:imagen/jpeg;base64,".base64_encode($col->imagen)."' width='200px' height='400px' class='img-responsive'/>";
+
+	?>
+	                                                                                    <div class="team-details">
+	                                                                                        <h4>   <?php echo $col->nombre;?> </h4>
+	                                                                                        <h3>Duracion : <?php echo $col->duracion;?> </h3>
+	                                                                                        <ul>
+	                                                                                            <li><a href="<?php echo $col->url_video;?>" target="_blank"><i >Ver</i></a></li>
+	                                                                                            <li><a href="#"><i >Reservar</i></a></li>
+	                                                                                        </ul>
+	                                                                                    </div>
+	                                                                                </div>
+
+	<?php
+}
+?>
+
+                                                </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+            </td>
+        </tr>
+
+
+	</table>
+
+    	<script src="../js/jquery-1.11.1.min.js"></script>
+        <script src="../js/jquery.singlePageNav.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/count-to.js"></script>
+        <script src="../js/jquery.appear.js"></script>
+        <script src="../js/owl.carousel.min.js"></script>
+        <script src="../js/custom.js"></script>
+        <script src="../js/script.js"></script>
+
+        <!---->
+
+</body>
+</html>
